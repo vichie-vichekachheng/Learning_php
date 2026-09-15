@@ -34,11 +34,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     $student_name = filter_input(INPUT_POST, "studentName");
     $major = filter_input(INPUT_POST, 'studentMajor');
     if(empty($student_id)){
-        echo "Student ID is required.";
+        echo "<h1 style='text-align:center; margin-top:40px; color:red;'>Student ID is required.</h1>";
     }elseif(empty($student_name)){
-        echo "Student Name is required.";
+        echo "<h1 style='text-align:center; margin-top:40px; color:red;'>Student name is required.</h1>";
     } elseif(empty($major)){
-        echo "Student's major is required.";
+        echo "<h1 style='text-align:center; margin-top:40px; color:red;'>Student's Major is required.</h1>";
     } else{
         $sql = "INSERT INTO students_info (student_id, student_name, Major)
                 VALUES ($student_id, '$student_name','$major')
